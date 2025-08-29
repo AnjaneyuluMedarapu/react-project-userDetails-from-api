@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MoonLoader } from 'react-spinners';
 
-const URL = "https://jsonplaceholder.typicode.com/users"
+const URL = "https://fakestoreapi.com/products"
 
 const UserDetailsFromApi = () => {
 
@@ -54,17 +54,20 @@ const UserDetailsFromApi = () => {
 
     return (
         <div className='flex flex-col items-center'>
-            <h1 className='text-4xl mb-9 mt-3 underline'>User Details From Api</h1>
-            <ul className='flex flex-col items-center flex-wrap gap-5'>
+            <h1 className='text-4xl mb-9 mt-3 underline'>Product Details From Api</h1>
+            <ul className='flex flex-row flex-wrap justify-center gap-5'>
                 {
                 userData.map((eachUserItem)=>{
-                    const {id, name, email, address} = eachUserItem
+                    const {id, title, image, price, rating} = eachUserItem
                     return(
-                        <li key={id} className='w-[450px] h-[100px] shadow-md'>
-                            <div className='text-center'>
-                                <h1 className='text-[24px]'>Name: {name}</h1>
-                                <h1 className='text-[18px] text-blue-700'>Email: {email}</h1>
-                                <h1 className='text-[16px] text-shadow-blue-950'>Address: {address.city}</h1>
+                        <li key={id} className='w-[320px] h-[270px] border rounded-[5px] shadow-xl'>
+                            <div className='flex flex-col'>
+                                <div className='flex flex-row justify-center'>
+                                     <img className='w-[100px] h-[130px] mt-2' src={image} alt=''/>
+                                </div>
+                                <h1 className='text-[15px] text-center mt-4 px-2'>{title}</h1>
+                                <h1 className='text-[16px] text-blue-700 font-medium text-s text-center'>Rs. {price}</h1>
+                                <h1 className='text-[13px] text-green-700 font-medium text-s text-center'>Rating : {rating.rate}</h1>
                             </div>
                         </li>
                     )
