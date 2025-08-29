@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 import './App.css'
-import UserDetailsFromApi from './components/UserDetailsFromApi'
+import ProductDetailsFromApi from './components/ProductDetailsFromApi'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className='h-[100%]'>
-     <UserDetailsFromApi/>
+     <ProductDetailsFromApi/>
     </div>
   )
 }
