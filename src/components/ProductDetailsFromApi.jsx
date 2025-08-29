@@ -3,7 +3,7 @@ import { MoonLoader } from 'react-spinners';
 
 const URL = "https://fakestoreapi.com/products"
 
-const UserDetailsFromApi = () => {
+const ProductDetailsFromApi = () => {
 
     const [userData, setUserData] = useState([])
     const [Loading, setLoading] = useState(false)
@@ -78,4 +78,4 @@ const UserDetailsFromApi = () => {
     );
 };
 
-export default UserDetailsFromApi;
+export default ProductDetailsFromApi;
